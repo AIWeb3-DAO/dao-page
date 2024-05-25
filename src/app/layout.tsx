@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { NavbarDemo } from "@/components/TopNavbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { ApolloProvider } from "@apollo/client";
+import { client } from "@/graphql/client";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +20,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+   
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+      >
+      
       <body className={inter.className}>{children}</body>
+      <Footer  />
+      </ThemeProvider>
+     
     </html>
   );
 }

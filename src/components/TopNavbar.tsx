@@ -32,15 +32,15 @@ function Navbar({ className }: { className?: string }) {
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Discord"
-              href="https://algochurn.com"
+              href="https://discord.com/invite/pQtZG8UQfk"
               src="https://pbs.twimg.com/profile_images/1719768085815803905/Qt-WhTGg_400x400.jpg"
-              description="Prepare for tech interviews like never before."
+              description="Join our  Discord community."
             />
             <ProductItem
               title="Telegram"
-              href="https://tailwindmasterkit.com"
+              href="https://t.me/aiweb3dao"
               src="https://pbs.twimg.com/profile_images/1183117696730390529/LRDASku7_400x400.jpg"
-              description="Production ready Tailwind css components for your next project"
+              description="Join our Discord community"
             />
          
           </div>

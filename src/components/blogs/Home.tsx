@@ -1,3 +1,4 @@
+//@ts-nocheck
 
 "use client"
 import React from 'react'
@@ -15,7 +16,7 @@ export default function BlogHome() {
              }
             },
             "orderBy": "createdAtTime_DESC",
-            "limit": 12,
+            "limit": 28,
             
             
           }
@@ -23,6 +24,21 @@ export default function BlogHome() {
     
       )
     
+      if(loading) {
+        return(
+          <div className='w-full min-h-screen flex items-center justify-center'>
+             <h1 className='text-2xl uppercase'>loading ...</h1>
+          </div>
+        )
+      }
+
+      if(error) {
+        return(
+          <div className='w-full min-h-screen flex items-center justify-center'>
+             <h1 className='text-2xl uppercase'>something went wrong</h1>
+          </div>
+        )
+      }
       
   return (
     <div className='mt-28 min-h-screen  text-gray-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-center place-items-center gap-4 max-w-7xl mx-auto '>

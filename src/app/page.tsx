@@ -10,7 +10,10 @@ import { NavbarDemo } from "@/components/TopNavbar";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between max-w-7xl mx-auto">
+  
          <NavbarDemo    />
+        
+        
 
      <Hero2   />
      <TrustedBy  />

@@ -104,6 +104,30 @@ export const investors = [
     },
 ]
 
+
+export const tipTier = [
+    { amount: 5, name: "High Five", emoji: "🖐️" },
+    { amount: 10, name: "Perfect Ten", emoji: "🔟" },
+    { amount: 15, name: "Sweet Spot", emoji: "🎯"
+},
+{ amount: 20, name: "Twenties Twist", emoji: "💫" },
+{ amount: 25, name: "Silver Splash", emoji: "🌊" },
+{ amount: 30, name: "Thrifty Thrill", emoji: "🎈" },
+{ amount: 35, name: "Lucky Leap", emoji: "🍀" },
+{ amount: 40, name: "Fab Forty", emoji: "💃" },
+{ amount: 45, name: "Cheers Charm", emoji: "🥂" },
+{ amount: 50, name: "Golden Give", emoji: "🌟" },
+{ amount: 55, name: "Fifty-Five Fling", emoji: "💃" },
+{ amount: 60, name: "Sixty Sparkle", emoji: "✨" },
+{ amount: 65, name: "Radiant Rise", emoji: "☀️" },
+{ amount: 70, name: "Heavenly Help", emoji: "😇" },
+{ amount: 75, name: "Joyful Jump", emoji: "🌈" },{ amount: 80, name: "Energetic Eighty", emoji: "💥" },
+{ amount: 85, name: "Breezy Boost", emoji: "🌬️" },
+{ amount: 90, name: "Nifty Ninety", emoji: "🎩" },
+//{ amount: 95, name: "Vibrant Victory", emoji: "🏆" },
+//{ amount: 100, name: "Century Celebration", emoji: "🎉" }
+];
+
 export const SUPABASE_URL_CLIENT  = process.env.NEXT_PUBLIC_SUPABASE_URL!
 export const SUPABASE_NON_KEY_URL =  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export const logo= "https://pbs.twimg.com/profile_images/1637269369658171392/CHS2SlUh_400x400.jpg"

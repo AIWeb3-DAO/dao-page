@@ -34,14 +34,15 @@ const ws = 'wss://rpc.polkadot.io'
 
 const ws2 = 'wss://rpc.polkadot.io'
 
-
-
-const test = async ()  =>  {
 const injected = injectedModule()
 const subwalletWallet = subwalletModule()
 const subwalletPolkadotWalet = subwalletPolkadotModule()
 
+const test = async ()  =>  {
+
+
 const onboard = Onboard({
+
 wallets: [injected, subwalletWallet, subwalletPolkadotWalet],
 chains: [
   {
@@ -72,25 +73,16 @@ chainsPolkadot: [
 })
 
 
-
+const wallets = await onboard?.connectWallet()
+const wallet = wallets[0]
+setwallet(wallet)
+console.log("wallets", wallet)
 
 }
 
 
 
-  /*const getWallet =  async ()  =>  {
-    const wallets = await onboard?.connectWallet()
-const wallet = wallets[0]
-setwallet(wallet)
-console.log("wallets", wallet)
-
-  }
-useEffect(() => {
-  getWallet()
  
-}, [wallet1])*/
-
-
 
 
 

@@ -9,6 +9,7 @@ import subwalletPolkadotModule from '@subwallet-connect/subwallet-polkadot';
 import type {EIP1193Provider, SubstrateProvider} from "@subwallet-connect/common";
 import {ethers} from 'ethers';
 import {ApiPromise, WsProvider} from '@polkadot/api';
+import { stringToHex } from "@polkadot/util";
 
 export function NavbarDemo() {
 
@@ -38,51 +39,43 @@ const injected = injectedModule()
 const subwalletWallet = subwalletModule()
 const subwalletPolkadotWalet = subwalletPolkadotModule()
 
-const test = async ()  =>  {
-
-
-const onboard = Onboard({
-
-wallets: [injected, subwalletWallet, subwalletPolkadotWalet],
-chains: [
-  {
-    id: '0x1',
-    token: 'ETH',
-    label: 'Ethereum Mainnet',
-    rpcUrl: MAINNET_RPC_URL
-  }
-],
-chainsPolkadot: [
-  {
-    id: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
-    namespace: 'substrate',
-    token: 'DOT',
-    label: 'Polkadot',
-    rpcUrl: `polkadot.api.subscan.io`,
-    decimal: 10
-  },
-  {
-    id: 'lashbox_simple_container_4274',
-    namespace: 'substrate',
-    token: 'AIWEB',
-    label: 'aiweb3',
-    rpcUrl: `wss://fraa-flashbox-4274-rpc.a.stagenet.tanssi.network`,
-    decimal: 12
-  }
-]
-})
-
-
-const wallets = await onboard?.connectWallet()
-const wallet = wallets[0]
-setwallet(wallet)
-console.log("wallets", wallet)
-
-}
 
 
 
- 
+
+/*const onboard = Onboard({
+
+  wallets: [ subwalletPolkadotWalet],
+  chains: [
+    {
+      id: '0x1',
+      token: 'ETH',
+      label: 'Ethereum Mainnet',
+      rpcUrl: MAINNET_RPC_URL
+    }
+  ],
+  chainsPolkadot: [
+    {
+      id: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
+      namespace: 'substrate',
+      token: 'DOT',
+      label: 'Polkadot',
+      rpcUrl: `polkadot.api.subscan.io`,
+      decimal: 10
+    },
+    {
+      id: 'lashbox_simple_container_4274',
+      namespace: 'substrate',
+      token: 'AIWEB',
+      label: 'aiweb3',
+      rpcUrl: `wss://fraa-flashbox-4274-rpc.a.stagenet.tanssi.network`,
+      decimal: 12
+    }
+  ]
+  })*/
+
+
+
 
 
 
@@ -93,7 +86,7 @@ console.log("wallets", wallet)
 
   return (
     <div className="flex justify-between w-full  h-24 sticky top-0 z-40 items-center px-3">
-         <div className="font-extrabold">AIWEB3</div>
+       
     <div
       className={cn("fixed top-10 inset-x-0 border rounded-3xl border-gray-700    max-w-2xl mx-auto z-50", className)}
     >
@@ -140,7 +133,7 @@ console.log("wallets", wallet)
 
       
       </div>
-     <button className={`py-3 px-5 rounded-xl bg-purple-400 `}  onClick={()  =>  test()}> Connect wallet</button>
+   
     </div>
   );
 }

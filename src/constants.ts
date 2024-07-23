@@ -133,3 +133,76 @@ export const SUPABASE_NON_KEY_URL =  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export const logo= "https://pbs.twimg.com/profile_images/1637269369658171392/CHS2SlUh_400x400.jpg"
 export const polkadot_logo = "https://pbs.twimg.com/profile_images/1675780528992141312/AIth_3GW_400x400.jpg"
 export const PLACE_HOLDER = `https://ipfs.subsocial.network/ipfs/bafybeiezgdmkzq3pou4z2vapf2kgje3dstk6fsgm4fx5zpgsd6ygdjpxea`
+
+
+
+
+  export const testVideos  =  [
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+      {
+        id :  1,
+        title : "This  is  just testin video title",
+         likes : 1,
+         cover : "/img/messi.png" 
+      },
+
+  ]

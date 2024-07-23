@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "@/graphql/client";
 import Footer from "@/components/Footer";
+import { UserContextProvider } from "@/components/UserContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -52,9 +53,11 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
       >
+   
       
       <body className={inter.className}>{children}</body>
       <Footer  />
+     
       </ThemeProvider>
      
     </html>

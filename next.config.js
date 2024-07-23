@@ -19,6 +19,12 @@ module.exports = {
             port: '',
             //pathname: '',
           },
+          {
+            protocol: 'https',
+            hostname: 'www.rapu.xyz',
+            port: '',
+            //pathname: '',
+          },
       ],
     },
   }

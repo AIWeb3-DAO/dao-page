@@ -1,10 +1,14 @@
+"use client"
+
 import PlayePage from '@/components/videos/PlayePage'
 import React from 'react'
-
-export default function page() {
+import withAuth from '@/middleware/AuthMiddleware'
+const  page  =()  => {
   return (
     <div>
       <PlayePage    />
     </div>
   )
 }
+
+export default withAuth(page)

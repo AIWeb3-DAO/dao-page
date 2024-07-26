@@ -95,6 +95,7 @@ const subwalletPolkadotWalet = subwalletPolkadotModule()
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
           <HoveredLink href="/blog">Our blog</HoveredLink>
+          <HoveredLink href="/news">Pikadot news</HoveredLink>
             <HoveredLink href="/about">About us</HoveredLink>
             <HoveredLink href="/videos">Videos</HoveredLink>
             <HoveredLink href="/events">Our Events</HoveredLink>

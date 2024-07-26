@@ -100,10 +100,10 @@ const connectWallet = async ()  =>  {
 ;
   return (
     <div className='flex flex-col gap-3 items-center justify-center'>
-        <h1  className='text-3xl font-extrabold'>Login with your wallet</h1>
+        <h1  className='text-3xl font-extrabold'>Sign in with your wallet</h1>
 
          <button className='py-3 px-6 bg-green-600  rounded-xl'  onClick={()   => connectWallet() }>Sign in </button>
-         <button className='py-2 px-4 bg-yellow-500 hidden'  onClick={()   => logout() }>Log out </button>
+        
     </div>
   )
 }

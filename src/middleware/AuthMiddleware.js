@@ -1,7 +1,8 @@
 // middleware/authMiddleware.js
+"use client"
 
-import {useUserContext}  from "../providers/UserContext"
-import { useRouter } from 'next/router';
+import { useUserContext } from '@/components/UserContext';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 const withAuth = (WrappedComponent) => {

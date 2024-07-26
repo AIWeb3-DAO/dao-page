@@ -206,3 +206,16 @@ export const PLACE_HOLDER = `https://ipfs.subsocial.network/ipfs/bafybeiezgdmkzq
       },
 
   ]
+
+
+
+
+    export const  fireBaseConfigInfo =  {
+        API_KEY  :  process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_API_KEY,
+        AUTH_DOMAIN : process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_AUTH_DOMAIN,
+        PROJECT_ID: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_PROJECT_ID,
+        BUCKET_ID : process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_STORAGE_BUCKET,
+        SENDER_ID : process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+        APP_ID :  process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_APP_ID,
+        MEASUREMENT_ID : process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_MEASUREMENT_ID
+    }

@@ -46,6 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <body  className={`${inter.className}  w-full bg-black text-gray-200`}>
    
       <ThemeProvider
         attribute="class"
@@ -55,10 +56,11 @@ export default function RootLayout({
       >
    
       
-      <body className={inter.className}>{children}</body>
+      {children}
       <Footer  />
      
       </ThemeProvider>
+      </body>
      
     </html>
   );

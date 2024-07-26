@@ -39,17 +39,17 @@ const [testTruth, settestTruth] = useState(true)
 
         useEffect(() => {
           fetchUser()
-        })
+        },[userProfile])
         
 
       console.log("user profile from header  nav ",  userData)
   return (
-    <div  className=' border h-[60px] w-full sticky top-0 z-30 flex justify-between items-center px-4'>
+    <div  className=' border h-[60px] w-full sticky top-0 z-30 flex justify-between items-center px-4 bg-black'>
         
    <div>logo</div>
 
    <div className='flex items-center space-x-2'>
-    <button onClick={() => handleToggleTheme()}  className='bg-green-400 px-3 py-2 rounded-xl'>toggle theme</button>
+ 
      <p className='font-semibold'>{userData &&  truncateText(userData?.address, 30)}</p>
       {! userProfile &&  <Link href={'/login'}  className='py-3 px-5 rounded-2xl border border-green-400'>Connect wallet</Link>}
    </div>

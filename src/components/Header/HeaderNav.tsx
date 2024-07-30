@@ -42,11 +42,11 @@ const [testTruth, settestTruth] = useState(true)
         },[userProfile])
         
 
-      console.log("user profile from header  nav ",  userData)
+     
   return (
-    <div  className=' border h-[60px] w-full sticky top-0 z-30 flex justify-between items-center px-4 bg-black'>
+    <div  className=' border-b border-zinc-900 h-[60px] w-full sticky top-0 z-30 flex justify-between items-center px-4 bg-black'>
         
-   <div>logo</div>
+   <Link href={`/`}>logo</Link>
 
    <div className='flex items-center space-x-2'>
  

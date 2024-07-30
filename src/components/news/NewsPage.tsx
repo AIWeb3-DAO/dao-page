@@ -4,6 +4,7 @@
 import React, {useState, useEffect} from 'react'
 import { collection, query, orderBy, limit, getDocs, startAfter } from "firebase/firestore";
 import { FB_DB } from '@/lib/fbClient';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function NewsPage() {
     const [news, setNews] = useState([])
@@ -60,28 +61,45 @@ export default function NewsPage() {
 
     if (loading){
         return(
-            <p>Loading ....</p>
+            <div   className='w-full h-screen flex items-center justify-center'>
+            <p  className='uppercase text-xl'>Loading ....</p>
+            </div>
         )
     }
 
   return (
-    <div>
+    <div  className='  max-w-7xl  mx-auto'>
         <div  className='h-[30vh] flex items-center justify-center'>
             <h1  className='text-2xl font-semibold'>Curated  news  list for  polkadot eco</h1>
         </div>
+        <div  className='flex space-x-10  justify-center'>
 
-        <div  className='mt-8 grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-6 space-x-3'>
+        <div  className=' flex flex-col w-full lg:w-6/12  max-w-xl  border-dashed p-3  bg-zinc-900 rounded-xl '>
               {news?.map((item, i)  =>  (
-                <div  key={i}>
-                    <div className='border h-44 w-full border-red-500 rounded-xl flex items-center justify-center'> 
-                         <p>News cover img</p>
-                         </div>
+                <div  key={i}  className='  border-l-2  border-yellow-100 my-5 p-4'>
+                  
 
                          <div> 
-                            <p>{item?.otherINFO}</p>
+                            <h1  className='font-semibold text-xl my-3'>{item?.otherINFO}</h1>
+
+                              <p>This  is  real  description of the  news  it's  not blank   it has  some cool and  long contents  so please  read  this  short   and  enjoy it  it's fuckng coool</p>
                              </div>
+                             <div> 
+
+                                   {/*  share  icons  here */}
+                                
+                                
+                                 </div>
                   </div>
               ))}
+ 
+        </div>
+        
+
+    <div  className='w-4/12 hidden lg:flex   border-dashed p-3  bg-zinc-900  rounded-xl'>
+         <h1  className='uppercase font-semibold'>Trending</h1>
+
+          </div>
         </div>
     </div>
   )

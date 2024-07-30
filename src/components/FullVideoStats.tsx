@@ -1,11 +1,10 @@
-
+//@ts-nocheck
 
 
 import React, {useState, useEffect} from 'react'
 import ShareButtons from './ShareButtons';
 //import Modal from '../common/Modal';
 import { LuHelpingHand } from "react-icons/lu";
-
 import { FaFire } from "react-icons/fa";
 import {
   Dialog,
@@ -22,17 +21,16 @@ import TipModal from './TipModal';
 
 import { useUserContext } from './UserContext';
 import { ModalBody, ModalContent, ModalProvider, ModalTrigger } from './ui/animated-modal';
+import { timeAgo } from '@/lib/utils';
+import { truncateText } from '@/utils/truncateTxt';
   type statsProps ={
     stats? : any
     createdAt ? : any
      videId? : any
-     mints ? : any
-     likes ? : any
      tips ? : any
-     isLiked ? : any
-     note ? : any
+   
   }
-export default function FullVideoStats({stats, createdAt, videId, tips, likes, isLiked, note} : statsProps) {
+export default function FullVideoStats({stats, createdAt, videId, tips} : statsProps) {
   const currentDate = new Date();
   const videoCreatedAt = new Date(createdAt);
   const {userProfile} = useUserContext()
@@ -41,43 +39,11 @@ export default function FullVideoStats({stats, createdAt, videId, tips, likes, i
   const diffInHours = diffInMilliseconds / (60 * 60 * 1000);
   //const duration = moment.duration(diffInHours, "hours");
   const  WEBSITE_URL  = "hello  website"
-
+    const isLiked =  false
     const [isShowTipModal, setisShowTipModal] = useState(false)
 
     const [isShowTradeModal, setisShowTradeModal] = useState()
-  /*  const  contract = new Contract(contractAddress, ABI, signer)
-      const handleMint = async () =>  {
-         if(! signer || ! userAddress){
-          alert("Connect wallet first")
-         }else if( userAddress && !primaryProfile){
-          alert("You have not claimed profile")
-         }else {
-          const fakeLinkModuleInitData = "0x7374617274696e675f6279746533320000000000000000000000000000000000"; // Adjust as needed
-            const mintVideoData = {
-            characterId: 2,  //note?.characterId, 
-            contentUri: 3, //note?.id,
-            to:  userAddress, 
-          //data : 12
-          };
 
-          const transaction = await contract?.mintNote(mintVideoData);
-    await transaction.wait();
-
-    console.log("Character created successfully!");
-    console.log("Character created  here is the tx id", transaction);
-         }
-      }*/
-
-        /* const handleLike  = async ()  =>  {
-            
-         }*/
-
-
-       /* useEffect(() => {
-          isPostLiked(videId, userProfile?.id)
-          postLikes(videId)
-          
-        }, [videId, userProfile?.id])*/
 
 
          
@@ -91,7 +57,7 @@ export default function FullVideoStats({stats, createdAt, videId, tips, likes, i
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5">
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
-<p className='xs:text-xs'>time ago</p>
+<p className='xs:text-xs'>{timeAgo(createdAt)}</p>
          </div>
          <div className={`flex gap-2 items-center text-sm dark:text-gray-400 text-gray-800`}>
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5">
@@ -162,7 +128,7 @@ export default function FullVideoStats({stats, createdAt, videId, tips, likes, i
       <div  className=''>
           {stats?.map((item, i)  =>  (
             <div key={i}  className='my-3'> 
-                <p>{item}</p>
+                <p>{truncateText(item, 20)}</p>
              </div>
           ))}
       </div>

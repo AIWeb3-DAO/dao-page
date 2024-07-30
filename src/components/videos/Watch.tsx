@@ -12,6 +12,7 @@ import  {getFirestore, getDoc, collection, doc, getDocs}  from 'firebase/firesto
 import {initializeApp}  from "firebase/app"
 export default function Watach() {
   const [videos, setVideos] = useState([])
+  const [isLoading, setisLoading] = useState(true)
 
 
   const app =  initializeApp(fireBaseConfig)
@@ -62,8 +63,10 @@ export default function Watach() {
               description: `Posted ${timeDifferenceInHours} hours ( ${timeDifferenceInMins} ) mins ago, and the current time is ${currentTime}`,
               currentRatio: current_ratio,
             });
+            setisLoading(false)
           } else {
             console.error('Invalid YouTube URL:', data.youtubeURL);
+            setisLoading(false)
           }
         });
         console.log("the video list is: ", videosList);
@@ -80,6 +83,16 @@ export default function Watach() {
 
 
      console.log("all videos  is  here ", videos)
+
+
+
+     if(isLoading){
+      return(
+        <div   className='w-full h-screen flex items-center justify-center'>
+        <p  className='uppercase text-xl'>Loading ....</p>
+        </div>
+      )
+     }
    
 
   return (
@@ -92,7 +105,7 @@ export default function Watach() {
      </div>
      </div>
     
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 my-3'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 my-3  max-w-[90%]   mx-auto '>
 
         {videos?.map((item, i)  =>  (
            <VideoCard key={i} video={item}  />

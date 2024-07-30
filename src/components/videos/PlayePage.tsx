@@ -43,7 +43,32 @@ export default function PlayePage() {
     console.log("the router", videoData)
 
 
-    if (loading) return <p>Loading...</p>;
+    function formatTimestamp(seconds) {
+      // Convert seconds to milliseconds
+      const milliseconds = seconds * 1000;
+    
+      // Create a Date object
+      const dateObject = new Date(milliseconds);
+    
+      // Format the date into a human-readable string
+      const humanReadableDate = dateObject.toLocaleString(); // Adjust this as needed
+    
+      return humanReadableDate;
+    }
+
+
+      const readbaleTimeStamp = formatTimestamp(videoData?.timestamp?.seconds)
+
+        console.log("the readable time ", readbaleTimeStamp)
+
+
+    if (loading) {
+      return(
+        <div   className='w-full h-screen flex items-center justify-center'>
+        <p  className='uppercase text-xl'>Loading ....</p>
+        </div>
+      )
+    }
   return (
     <>
     <HeaderNav  />
@@ -64,7 +89,7 @@ export default function PlayePage() {
          <div  className='my-4 px-3 '>
          <h1 className='text-lg sm:text-xl md:text-2xl text-text '>This  is just  testing  video we want to see</h1>
  
-         <FullVideoStats  stats={videoData?.contributors}  /> 
+         <FullVideoStats  stats={videoData?.contributors} createdAt={videoData?.timestamp?.seconds}  /> 
        
     
          </div>

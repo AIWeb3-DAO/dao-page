@@ -98,8 +98,7 @@ const subwalletPolkadotWalet = subwalletPolkadotModule()
           <HoveredLink href="/news">Pikadot news</HoveredLink>
             <HoveredLink href="/about">About us</HoveredLink>
             <HoveredLink href="/videos">Videos</HoveredLink>
-            <HoveredLink href="/events">Our Events</HoveredLink>
-            <HoveredLink href="/nfts">Our NFTs</HoveredLink>
+           
           
           </div>
         </MenuItem>

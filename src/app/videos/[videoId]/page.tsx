@@ -2,7 +2,7 @@
 
 import PlayePage from '@/components/videos/PlayePage'
 import React from 'react'
-import withAuth from '@/middleware/AuthMiddleware'
+//import withAuth from '@/middleware/AuthMiddleware'
 const  page  =()  => {
   return (
     <div>
@@ -11,4 +11,4 @@ const  page  =()  => {
   )
 }
 
-export default withAuth(page)
+export default page

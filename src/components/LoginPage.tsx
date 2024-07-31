@@ -12,12 +12,19 @@ import injectedModule from '@subwallet-connect/injected-wallets';
 import subwalletModule from '@subwallet-connect/subwallet';
 import subwalletPolkadotModule from '@subwallet-connect/subwallet-polkadot';
 import type {EIP1193Provider, SubstrateProvider} from "@subwallet-connect/common";
-
+import ledgerModule from '@subwallet-connect/ledger-polkadot'
+import TalismanModule from '@subwallet-connect/talisman'
+import PolkadotJsModule from '@subwallet-connect/polkadot-js'
+import coinbaseWalletModule from '@subwallet-connect/coinbase'
 import {ethers} from 'ethers';
 export default function LoginPage() {
     const [wallet, setwallet] = useState(null)
     const router = useRouter()
     const subwalletPolkadotWalet = subwalletPolkadotModule()
+    const coinbaseWalletSdk = coinbaseWalletModule({ darkMode: true })
+    const ledger = ledgerModule()
+    const talisman = TalismanModule ()
+    const polkadotjs= PolkadotJsModule ()
     const {verifyNonce, logout, userProfile}  =  useUserContext()
 const MAINNET_RPC_URL = 'https://mainnet.infura.io/v3/<INFURA_KEY>'
 const ws = 'wss://rpc.polkadot.io'
@@ -60,7 +67,7 @@ const ws = 'wss://rpc.polkadot.io'
 const connectWallet = async ()  =>  {
     const onboard = Onboard({
   
-      wallets: [ subwalletPolkadotWalet],
+      wallets: [ subwalletPolkadotWalet, talisman, polkadotjs, ledger, coinbaseWalletSdk],
       chains: [
         {
           id: '0x1',

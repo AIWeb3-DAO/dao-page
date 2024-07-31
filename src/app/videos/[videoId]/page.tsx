@@ -1,4 +1,4 @@
-"use client"
+
 
 import PlayePage from '@/components/videos/PlayePage'
 import React from 'react'

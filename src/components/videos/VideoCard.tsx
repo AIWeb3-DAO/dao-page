@@ -19,3 +19,11 @@ export default function VideoCard({video}  : Props) {
     </div>
   )
 }
+
+
+   const  contributors  =  [
+    {
+       address :  "hhahah",
+        amount :  100 
+    }
+   ]

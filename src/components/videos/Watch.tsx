@@ -69,11 +69,13 @@ export default function Watach() {
             setisLoading(false)
           }
         });
-        console.log("the video list is: ", videosList);
+               console.log("the video list is: ", videosList);
         setVideos(videosList);
-      }
+        setisLoading(false)
+      }   
     } catch (error) {
       console.error('Error fetching videos:', error);
+      setisLoading(false)
     }
   };
 

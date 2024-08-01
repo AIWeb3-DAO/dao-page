@@ -6,6 +6,7 @@ import { useUserContext } from '../UserContext'
 import { truncateText, truncateText2 } from '@/utils/truncateTxt';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HeaderNav() {
     const [userData, setuserData] = useState(null)
@@ -49,7 +50,8 @@ const [testTruth, settestTruth] = useState(true)
   return (
     <div  className=' border-b border-zinc-900 h-[60px] max-w-7xl mx-auto w-full sticky top-0 z-30 flex justify-between items-center px-4 bg-black'>
         
-   <Link href={`/`}>logo</Link>
+   <Link href={`/`}>
+   <Image  src={`/img/logo.jpg`}  width={40} height={40} alt='logo'   className='object-cover rounded-full' /></Link>
 
    <div className='flex items-center space-x-2'>
  

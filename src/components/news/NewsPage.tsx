@@ -5,6 +5,7 @@ import React, {useState, useEffect} from 'react'
 import { collection, query, orderBy, limit, getDocs, startAfter } from "firebase/firestore";
 import { FB_DB } from '@/lib/fbClient';
 import { FaXTwitter } from 'react-icons/fa6';
+import HeaderNav from '../Header/HeaderNav';
 
 export default function NewsPage() {
     const [news, setNews] = useState([])
@@ -68,6 +69,8 @@ export default function NewsPage() {
     }
 
   return (
+    <>
+    <HeaderNav  />
     <div  className='  max-w-7xl  mx-auto'>
         <div  className='h-[30vh] flex items-center justify-center'>
             <h1  className='text-2xl font-semibold'>Curated  news  list for  polkadot eco</h1>
@@ -102,5 +105,6 @@ export default function NewsPage() {
           </div>
         </div>
     </div>
+    </>
   )
 }

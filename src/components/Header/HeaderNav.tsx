@@ -1,3 +1,6 @@
+"use client"
+
+
 import React, {useState, useEffect} from 'react'
 import { useUserContext } from '../UserContext'
 import { truncateText, truncateText2 } from '@/utils/truncateTxt';
@@ -44,7 +47,7 @@ const [testTruth, settestTruth] = useState(true)
 
      
   return (
-    <div  className=' border-b border-zinc-900 h-[60px] w-full sticky top-0 z-30 flex justify-between items-center px-4 bg-black'>
+    <div  className=' border-b border-zinc-900 h-[60px] max-w-7xl mx-auto w-full sticky top-0 z-30 flex justify-between items-center px-4 bg-black'>
         
    <Link href={`/`}>logo</Link>
 

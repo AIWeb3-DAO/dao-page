@@ -12,6 +12,8 @@ import HeaderNav from '../Header/HeaderNav';
 import { useRouter, usePathname } from 'next/navigation';
 import { FB_APP, FB_DB } from '@/lib/fbClient';
 import { doc, getDoc } from 'firebase/firestore';
+import LoginPage from '../LoginPage';
+import Navbar from '../home/Navbar';
 export default function PlayePage() {
   const [videoData, setVideoData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -71,9 +73,11 @@ export default function PlayePage() {
         </div>
       )
     }
+
+    // ${videoData?.youtubeURL}
   return (
     <>
-    <HeaderNav  />
+  <Navbar isShowConnect={true} />
     <div className='w-full  min-h-screen h-full flex space-x-3'>
         <div  className='w-full xl:w-[80%] min-h-screen px-2'>
          <div className='  h-[50vh] xl:h-[90vh]'>
@@ -90,8 +94,9 @@ export default function PlayePage() {
          </div>
          <div  className='my-4 px-3 '>
          <h1 className='text-lg sm:text-xl md:text-2xl text-text '>This  is just  testing  video we want to see</h1>
+     
  
-         <FullVideoStats  stats={videoData?.contributors} createdAt={videoData?.timestamp?.seconds}  /> 
+         <FullVideoStats  stats={videoData?.contributors} createdAt={videoData?.timestamp?.seconds} id={id} /> 
        
     
          </div>

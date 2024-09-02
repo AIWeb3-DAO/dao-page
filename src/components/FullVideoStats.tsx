@@ -23,17 +23,20 @@ import { useUserContext } from './UserContext';
 import { ModalBody, ModalContent, ModalProvider, ModalTrigger } from './ui/animated-modal';
 import { timeAgo } from '@/lib/utils';
 import { truncateText } from '@/utils/truncateTxt';
+import { ModeToggle } from './mode-toggle';
+import { Button } from './ui/button';
   type statsProps ={
     stats? : any
     createdAt ? : any
      videId? : any
      tips ? : any
+     id : any
    
   }
-export default function FullVideoStats({stats, createdAt, videId, tips} : statsProps) {
+export default function FullVideoStats({stats, createdAt, videId, tips, id} : statsProps) {
   const currentDate = new Date();
   const videoCreatedAt = new Date(createdAt);
-  const {userProfile} = useUserContext()
+  const {userProfile, storedWallet, wallet, connectWallet} = useUserContext()
   //@ts-ignore
   const diffInMilliseconds = currentDate - videoCreatedAt;
   const diffInHours = diffInMilliseconds / (60 * 60 * 1000);
@@ -44,6 +47,8 @@ export default function FullVideoStats({stats, createdAt, videId, tips} : statsP
 
     const [isShowTradeModal, setisShowTradeModal] = useState()
 
+
+       console.log('the stored wallet from fullvideo stats', storedWallet)
 
 
          
@@ -78,25 +83,31 @@ export default function FullVideoStats({stats, createdAt, videId, tips} : statsP
               </div>
             
 
-  <ModalProvider>
-    <ModalTrigger>
-          <div className='flex items-center gap-2 hover:text-text-primary cursor-pointer' >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+
+{wallet  ?  (
+ <ModalProvider>
+ <ModalTrigger>
+       <div className='flex items-center gap-2 hover:text-text-primary cursor-pointer' >
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+<path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 </svg>
 
 
 <p className='text-sm md:font-semibold'>Support</p>
-          </div>
-          </ModalTrigger>
+       </div>
+       </ModalTrigger>
 
-      <ModalBody>
-        <ModalContent>
-            <TipModal  />
-        </ModalContent>
-      </ModalBody>
+   <ModalBody>
+     <ModalContent>
+         <TipModal videoId={id} contributorAddress={"kabugus"} />
+     </ModalContent>
+   </ModalBody>
 
-          </ModalProvider>
+       </ModalProvider>
+): (
+  <Button className='' onClick={connectWallet}>Connect wallet to contribute</Button>
+)}
+ 
 
           <div className='flex items-center gap-2 hover:text-text-primary cursor-pointer hidden' >
      <FaFire   className='text-yellow-600 animate-bounce'  />

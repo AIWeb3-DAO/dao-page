@@ -10,6 +10,7 @@ import VideoCard from './VideoCard'
 import { fireBaseConfig } from '@/lib/fbClient'
 import  {getFirestore, getDoc, collection, doc, getDocs}  from 'firebase/firestore'
 import {initializeApp}  from "firebase/app"
+import Navbar from '../home/Navbar'
 export default function Watach() {
   const [videos, setVideos] = useState([])
   const [isLoading, setisLoading] = useState(true)
@@ -88,18 +89,18 @@ export default function Watach() {
 
 
 
-     if(isLoading){
+     /*if(isLoading){
       return(
         <div   className='w-full h-screen flex items-center justify-center'>
         <p  className='uppercase text-xl'>Loading ....</p>
         </div>
       )
-     }
+     }*/
    
 
   return (
     <>
-    <HeaderNav   />
+  <Navbar  />
 
   <div  className='h-[30vh] flex items-center justify-center'>
      <div  className=' p-2  max-w-xl  mx-auto  '>

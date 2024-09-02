@@ -6,19 +6,20 @@ import Supporters from "@/components/supporters/SupportedBy";
 import TrustedBy from "@/components/supporters/TrustedBy";
 import Image from "next/image";
 import { NavbarDemo } from "@/components/TopNavbar";
+import HomePage from "@/components/home/Home";
+import Navbar from "@/components/home/Navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between max-w-7xl mx-auto">
+    <main className="w-full">
+      <Navbar isShowConnect={false}  />
   
-         <NavbarDemo    />
-        
-        
-
-     <Hero2   />
-     <TrustedBy  />
-     <Supporters  />
-     <JoinMail  />
+      <div  className="w-full    min-h-screen     mx-auto">
+         <div >
+      <HomePage  />
+      </div>
+       </div>
+  
     </main>
   );
 }

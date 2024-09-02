@@ -1,3 +1,7 @@
+import { BadgeDollarSign , Link, House, Settings, LayoutDashboard, Link2, Flame, Code2, TrendingUp} from "lucide-react";
+
+
+
 export const latestBlogs = [
     {
         title  :  "this  is  my  testing ",
@@ -205,6 +209,40 @@ export const PLACE_HOLDER = `https://ipfs.subsocial.network/ipfs/bafybeiezgdmkzq
          cover : "/img/messi.png" 
       },
 
+  ]
+
+  export const features = [
+    {
+      icone : LayoutDashboard,
+      title : "Powerful dashboard",
+      description : "Easily manage your payments, API keys, and keep your business running smoothly with our intuitive dashboard.",
+    },
+    {
+      icone : Link2,
+      title : "Payment links",
+      description : "Generate payment links in seconds and receive payments seamlessly—no fuss, no hassle.",
+    },
+    {
+      icone : Link2,
+      title : "Create and Send Invoices with Ease",
+      description : "Design professional invoices quickly and manage payments effortlessly—streamlined for your convenience",
+    },
+
+    {
+      icone : Flame,
+      title : "Instant settlement",
+      description : "munaPay never holds your funds. They are transferred to your Hedera wallet instantly..",
+    },
+    {
+      icone : Code2,
+      title : "Easy and powerful SDKs",
+      description : "Quickly integrate with your business in a few lines of code and get your pre-built and hosted checkout page",
+    },
+    {
+      icone : TrendingUp,
+      title : "Optimised for conversion",
+      description : "Create frictionless checkout experiences with one click payments and QR codes.",
+    },
   ]
 
 

@@ -22,9 +22,9 @@ export default function GetStarted() {
         id='waitlist'
       >
          <h1 className='font-bold text-xl md:text-2xl text-center ' >No Pain, Only Gain</h1>
-          <h2 className='font-extralight text-center text-base md:text-xl dark:text-neutral-200 py-3'>Say goodbye to complex addresses and manual income tracking. <br /> Simplify your finances effortlessly.</h2>
+          <h2 className='font-extralight text-center text-base md:text-xl dark:text-neutral-200 py-3'>Together, We Empower the Next Wave of Web3 Innovators</h2>
           <div className='w-full  my-4'>
-            <h1 className='font-semibold text-xl text-center mb-3'>Join our waitlist</h1>
+            <h1 className='font-semibold text-xl text-center mb-3'>Join our mail list</h1>
            <div className='w-full my-8 flex space-x-4 px-3 items-center justify-between'>
              <Input  value={email}  onChange={(e)  => setemail(e.target.value)} placeholder='example@gmail.com' />
              <Button className='bg-yellow-500 text-black hover:bg-yellow-600'>Join Now</Button>

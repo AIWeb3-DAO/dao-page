@@ -214,34 +214,46 @@ export const PLACE_HOLDER = `https://ipfs.subsocial.network/ipfs/bafybeiezgdmkzq
   export const features = [
     {
       icone : LayoutDashboard,
-      title : "Powerful dashboard",
-      description : "Easily manage your payments, API keys, and keep your business running smoothly with our intuitive dashboard.",
+      title : "Polkadot",
+      description : "The powerful, secure core of Web3 for boundary-defying developers.",
+      logo  :  "https://pbs.twimg.com/profile_images/1675780528992141312/AIth_3GW_400x400.jpg",
+      brandColor :  "#ec4899"
     },
     {
       icone : Link2,
-      title : "Payment links",
-      description : "Generate payment links in seconds and receive payments seamlessly—no fuss, no hassle.",
+      title : "Sub wallet",
+      description : "A non-custodial Polkadot & Ethereum wallet. ",
+      logo  :  "https://pbs.twimg.com/profile_images/1765180742504427520/_5kSW1uf_400x400.png"
+
     },
     {
       icone : Link2,
-      title : "Create and Send Invoices with Ease",
-      description : "Design professional invoices quickly and manage payments effortlessly—streamlined for your convenience",
+      title : "Astar network",
+      description : "A Scalable Network Powering a Global Web3 Vision for All.",
+      logo  :  "https://pbs.twimg.com/profile_images/1765180742504427520/_5kSW1uf_400x400.png"
+
     },
 
     {
       icone : Flame,
-      title : "Instant settlement",
-      description : "munaPay never holds your funds. They are transferred to your Hedera wallet instantly..",
+      title : "Polimec",
+      description : "Polimec enables fundraising in a decentralized, transparent, and regulatory compliant manner",
+      logo  :  "https://pbs.twimg.com/profile_images/1648609268097007621/zLCEEksk_400x400.jpg"
+
     },
     {
       icone : Code2,
-      title : "Easy and powerful SDKs",
-      description : "Quickly integrate with your business in a few lines of code and get your pre-built and hosted checkout page",
+      title : "Bifrost",
+      description : "The Liquid Staking Standard for Any Chain.",
+      logo  :  "https://pbs.twimg.com/profile_images/1765180742504427520/_5kSW1uf_400x400.png"
+
     },
     {
       icone : TrendingUp,
-      title : "Optimised for conversion",
-      description : "Create frictionless checkout experiences with one click payments and QR codes.",
+      title : "Centrifuge",
+      description : "Centrifuge is the platform for tokenized real-world assets onchain •",
+      logo  :  "https://pbs.twimg.com/profile_images/1144565681977024512/KM_4CoiV_400x400.jpg"
+
     },
   ]
 
